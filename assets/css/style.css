@@ -491,6 +491,15 @@ section { padding-block: var(--space-6); }
   border-radius: var(--radius-lg);
 }
 
+.hero__image {
+  width: 100%;
+  height: auto;
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
 /* Editorial illustrations in place of photography — quiet line-art over a
    soft gradient wash, each keyed to a recurring motif rather than a stock photo. */
 .ornament {
