@@ -463,17 +463,51 @@ section { padding-block: var(--space-6); }
    Hero
    ========================================================================== */
 .hero {
-  padding-block: var(--space-6) var(--space-5);
   position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(440px, 72vh, 640px);
+  padding-block: var(--space-6) var(--space-5);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-bg);
 }
-.hero__grid {
-  display: grid;
-  gap: var(--space-4);
-  align-items: end;
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 84% 80%;
+  /* object-fit:cover already crops to the minimum needed to fill the frame,
+     so "zooming out" means scaling the whole image down a touch — this widens
+     the visible field of view by the inverse of the scale factor. Any sliver
+     of background peeking in at the edges matches .hero's own background
+     exactly, so it reads as a soft vignette rather than a gap. */
+  transform: scale(0.94);
+  transform-origin: center;
+  z-index: 0;
 }
-@media (min-width: 860px) {
-  .hero__grid { grid-template-columns: 1.3fr 1fr; }
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* An ellipse anchored where the text sits reads reliably across both a
+     wide-short desktop crop and a narrow-tall mobile crop, unlike a fixed-angle
+     linear gradient (which only worked at the aspect ratio it was tuned for). */
+  background: radial-gradient(
+    ellipse 85% 90% at 20% 42%,
+    var(--color-bg) 0%,
+    var(--color-bg) 38%,
+    color-mix(in srgb, var(--color-bg) 68%, transparent) 62%,
+    transparent 88%
+  );
 }
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+.hero__content { max-width: 36rem; }
 .hero h1 { margin-block: var(--space-2); }
 .hero .lede { max-width: 34rem; }
 .hero__meta {
@@ -489,15 +523,6 @@ section { padding-block: var(--space-6); }
   width: 100%;
   aspect-ratio: 4/3;
   border-radius: var(--radius-lg);
-}
-
-.hero__image {
-  width: 100%;
-  height: auto;
-  min-height: 280px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  display: block;
 }
 
 /* Editorial illustrations in place of photography — quiet line-art over a

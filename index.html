@@ -67,8 +67,18 @@
 <main id="main">
 
   <section class="hero">
-    <div class="wrap hero__grid">
-      <div>
+    <img
+      class="hero__bg"
+      src="assets/img/hero-desk.jpg"
+      srcset="assets/img/hero-desk-800w.jpg 800w, assets/img/hero-desk.jpg 1536w"
+      sizes="100vw"
+      width="1536" height="1024"
+      alt="Editorial illustration of a physician-writer's desk."
+      fetchpriority="high"
+      decoding="async">
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero__content">
         <p class="eyebrow">My2cents Inked</p>
         <h1 style="margin-block:var(--space-2)">Where medicine meets meaning.</h1>
         <p class="lede">Thoughtful writing on women's health, medicine, stories, books, poetry, and the beautifully ordinary moments that shape our lives.</p>
@@ -77,19 +87,10 @@
           <a class="btn btn-outline" href="journal.html">Browse all writing</a>
         </div>
       </div>
-      <img
-        class="hero__image"
-        src="assets/img/hero-desk.jpg"
-        srcset="assets/img/hero-desk-800w.jpg 800w, assets/img/hero-desk.jpg 1536w"
-        sizes="(min-width: 860px) 45vw, 100vw"
-        width="1536" height="1024"
-        alt="Editorial illustration of a physician-writer's desk."
-        fetchpriority="high"
-        decoding="async">
     </div>
   </section>
 
-  <section aria-labelledby="featured-heading">
+  <section aria-labelledby="featured-heading" style="margin-top:var(--space-3)">
     <div class="wrap">
       <div class="section-head">
         <h2 id="featured-heading" style="font-size:var(--step-3)">Featured Article</h2>
