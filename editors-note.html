@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Books &amp; Chapters — My2cents Inked</title>
-<meta name="description" content="On reading slowly, rereading honestly, and the chapters contributed to books shaped by other people's questions as much as my own.">
+<title>Editor's Note — My2cents Inked</title>
+<meta name="description" content="A note from Dr. Pooja Wadekar on why My2cents Inked exists — the space between medicine and literature, and what it means to listen.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖋️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,8 +53,9 @@
   <nav aria-label="Mobile">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="journal.html">Journal</a></li>
       <li><a href="womens-health.html">Women's Health</a></li>
+      <li><a href="medicine.html">Medicine</a></li>
+      <li><a href="essays.html">Essays</a></li>
       <li><a href="stories.html">Stories</a></li>
       <li><a href="poetry.html">Poetry</a></li>
       <li><a href="books.html">Books &amp; Chapters</a></li>
@@ -64,35 +65,16 @@
 </div>
 
 <main id="main">
-  <section class="section-tight">
+  <section>
     <div class="wrap">
-      <p class="eyebrow accent-books"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6c-2-1.5-5-2-8-1v13c3-1 6-.5 8 1 2-1.5 5-2 8-1V5c-3-1-6-.5-8 1Z"/><path d="M12 6v13"/></svg> Section</p>
-      <h1 style="margin-top:var(--space-2)">Books &amp; Chapters</h1>
-      <p class="lede" style="max-width:36rem;margin-top:var(--space-2)">On reading slowly, rereading honestly — and the chapters I've had the privilege of contributing to books shaped by other people's questions as much as my own.</p>
-
-      <form class="search-form mt-4" role="search" style="max-width:28rem" onsubmit="return false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <label for="cat-search" class="visually-hidden">Search Books</label>
-        <input type="search" id="cat-search" data-search-input placeholder="Search this section…">
-      </form>
-    </div>
-  </section>
-
-  <section class="section-tight" style="padding-top:0">
-    <div class="wrap journal-layout">
-      <aside class="filters" aria-label="Filter articles">
-        <div>
-          <h4>Tags</h4>
-          <div class="chip-row mt-2" data-tag-chips></div>
-        </div>
-      </aside>
-      <div>
-        <p class="result-count" data-result-count role="status"></p>
-        <div class="grid grid-3" data-listing-grid></div>
-        <div class="empty-state" data-empty-state hidden>
-          <p style="font-size:var(--step-1)">No pieces match that search.</p>
-          <p>Try a different keyword, or clear the tag filter.</p>
-        </div>
+      <h1>Editor's Note</h1>
+      <div class="prose mt-4">
+        <p>Medicine has taught me that every diagnosis begins with listening. Literature has taught me that every story deserves to be heard. Somewhere between the two lies the space where we begin to understand not only illness, but also ourselves.</p>
+        <p>The most meaningful questions rarely ask for quick answers. They ask us to listen more carefully, look more closely, and sometimes be comfortable not knowing everything at once.</p>
+        <p>My2Cents Inked grew out of a desire to preserve that space.</p>
+        <p>Perhaps this is what this website hopes to be&mdash;a place to think together, ask better questions, and remain curious. Not because every question has an answer, but because some are worth returning to.</p>
+        <p>Welcome. I am glad you are here.</p>
+        <p style="font-family:var(--font-quote); font-style:italic; font-size:var(--step-1); margin-top:var(--space-4)">&mdash; Pooja</p>
       </div>
     </div>
   </section>
@@ -154,9 +136,5 @@
 <script src="assets/js/posts.js"></script>
 <script src="assets/js/blog.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  renderTagChips("[data-tag-chips]", "Books & Chapters");
-  initListing({ fixedCategory: "Books & Chapters" });
-</script>
 </body>
 </html>
