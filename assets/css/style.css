@@ -848,6 +848,26 @@ section { padding-block: var(--space-6); }
 .prose a { color: var(--color-terracotta); text-decoration: underline; text-underline-offset: 3px; }
 .prose strong { color: var(--color-ink); }
 
+/* Editorial sign-off — a quiet closing, not a pull-quote or a byline card */
+.signoff { margin-top: var(--space-7); }
+.signoff__name {
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--step-1);
+  color: var(--color-ink);
+  line-height: 1.3;
+}
+.signoff__role {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-muted);
+  margin-top: 0.35rem;
+}
+
 .post-footer {
   margin-top: var(--space-5);
   padding-top: var(--space-4);
