@@ -30,6 +30,9 @@
   --color-slate: #4f6066;
   --color-slate-soft: #8ea3a9;
   --color-slate-wash: #e7edee;
+  --color-spice: #8f5a1c;
+  --color-spice-soft: #d99a4f;
+  --color-spice-wash: #f5e6d0;
 
   --color-focus: #a8502f;
 
@@ -95,6 +98,9 @@
   --color-slate: #a8c0c6;
   --color-slate-soft: #4f6066;
   --color-slate-wash: #212b2d;
+  --color-spice: #e0a862;
+  --color-spice-soft: #8a5a26;
+  --color-spice-wash: #332a1a;
 
   --color-focus: #e4926f;
 
@@ -242,6 +248,7 @@ section { padding-block: var(--space-6); }
 .eyebrow.accent-stories { color: var(--color-terracotta); }
 .eyebrow.accent-poetry { color: var(--color-lavender); }
 .eyebrow.accent-books { color: var(--color-gold); }
+.eyebrow.accent-recipes { color: var(--color-spice); }
 
 .card.accent-womens-health { border-top: 3px solid var(--color-sage-soft); }
 .card.accent-medicine { border-top: 3px solid var(--color-slate-soft); }
@@ -249,6 +256,7 @@ section { padding-block: var(--space-6); }
 .card.accent-stories { border-top: 3px solid var(--color-terracotta-soft); }
 .card.accent-poetry { border-top: 3px solid var(--color-lavender-soft); }
 .card.accent-books { border-top: 3px solid var(--color-gold-soft); }
+.card.accent-recipes { border-top: 3px solid var(--color-spice-soft); }
 
 /* ==========================================================================
    Header / Nav
@@ -705,12 +713,14 @@ section { padding-block: var(--space-6); }
 .category-card.accent-stories { border-top: 3px solid var(--color-terracotta-soft); }
 .category-card.accent-poetry { border-top: 3px solid var(--color-lavender-soft); }
 .category-card.accent-books { border-top: 3px solid var(--color-gold-soft); }
+.category-card.accent-recipes { border-top: 3px solid var(--color-spice-soft); }
 .category-card.accent-womens-health .category-card__icon { color: var(--color-sage); }
 .category-card.accent-medicine .category-card__icon { color: var(--color-slate); }
 .category-card.accent-essays .category-card__icon { color: var(--color-ink-soft); }
 .category-card.accent-stories .category-card__icon { color: var(--color-terracotta); }
 .category-card.accent-poetry .category-card__icon { color: var(--color-lavender); }
 .category-card.accent-books .category-card__icon { color: var(--color-gold); }
+.category-card.accent-recipes .category-card__icon { color: var(--color-spice); }
 
 /* Women's Health gets quiet top billing: a wider feature band above the topic grid */
 .topic-feature {
@@ -1002,6 +1012,112 @@ section { padding-block: var(--space-6); }
 .value-card.terracotta { border-left-color: var(--color-terracotta); }
 .masthead-item { display: flex; gap: var(--space-3); align-items: center; padding-block: var(--space-2); border-bottom: 1px solid var(--color-border); }
 .masthead-item .byline-avatar { width: 3rem; height: 3rem; }
+
+/* ==========================================================================
+   Recipes: breadcrumb, recipe card, step gallery, nutrition
+   ========================================================================== */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--step--1);
+  color: var(--color-muted);
+}
+.breadcrumb a { color: var(--color-muted); transition: color 0.2s var(--ease); }
+.breadcrumb a:hover { color: var(--color-terracotta); }
+.breadcrumb span[aria-current] { color: var(--color-ink-soft); }
+.breadcrumb .sep { opacity: 0.6; }
+
+.recipe-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-block: var(--space-4);
+}
+@media (min-width: 620px) { .recipe-card { grid-template-columns: repeat(4, 1fr); } }
+.recipe-card__item { display: flex; flex-direction: column; gap: 0.3rem; }
+.recipe-card__label {
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+.recipe-card__value { font-family: var(--font-display); font-size: var(--step-1); color: var(--color-ink); }
+
+.recipe-gallery {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: 1fr;
+  margin-block: var(--space-4);
+}
+@media (min-width: 700px) { .recipe-gallery { grid-template-columns: repeat(2, 1fr); } }
+.recipe-gallery__item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.recipe-gallery__photo {
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-spice-wash);
+  color: var(--color-spice);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--space-2);
+}
+.recipe-gallery__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.recipe-gallery__caption { padding: var(--space-2) var(--space-3); font-size: 0.92rem; color: var(--color-ink-soft); }
+.recipe-gallery__step {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-spice);
+  margin-right: 0.4em;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  margin-block: var(--space-4);
+}
+@media (min-width: 500px) { .nutrition-grid { grid-template-columns: repeat(4, 1fr); } }
+.nutrition-grid__item {
+  text-align: center;
+  padding: var(--space-3) var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.nutrition-grid__value { font-family: var(--font-display); font-size: var(--step-2); color: var(--color-spice); }
+.nutrition-grid__label { font-size: var(--step--1); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+
+.recipe-hero-photo {
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-lg);
+  background: var(--color-spice-wash);
+  color: var(--color-spice);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--space-3);
+  margin-block: var(--space-4);
+}
+.recipe-hero-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg); }
 
 /* ==========================================================================
    Footer
