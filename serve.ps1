@@ -11,6 +11,10 @@ $mime = @{
   ".js"   = "application/javascript; charset=utf-8"
   ".svg"  = "image/svg+xml"
   ".json" = "application/json"
+  ".jpg"  = "image/jpeg"
+  ".jpeg" = "image/jpeg"
+  ".png"  = "image/png"
+  ".webp" = "image/webp"
 }
 
 while ($listener.IsListening) {
