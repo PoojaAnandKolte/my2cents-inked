@@ -346,6 +346,67 @@ const POSTS = [
       Is how I am spelled.</p>
     `,
   },
+  {
+    slug: "the-journey",
+    title: "The Journey",
+    category: "Poetry",
+    tags: ["poetry", "nature", "travel", "reflection", "joy", "mindfulness"],
+    excerpt: "A quiet road trip becomes a reminder that life's greatest treasures are often found in the moments between destinations.",
+    date: "2026-08-05",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-1",
+    content: `
+      <p>The fresh touch of breeze<br>
+      Upon your face.<br>
+      An old radio,<br>
+      Blaring at its own pace.</p>
+      <p>Your thoughts,<br>
+      Left wandering.<br>
+      Roadside daffodils,<br>
+      Waving as you pass.</p>
+      <p>Birds soaring,<br>
+      Their joy loud enough<br>
+      To rival the wind.<br>
+      Sunbeams dancing<br>
+      Between the clouds.</p>
+      <p>Carefree laughter<br>
+      Filling the car,<br>
+      As though the passing trees<br>
+      Had never known scars.</p>
+      <p>The faint silhouettes<br>
+      Of houses gone by.<br>
+      Curious glances<br>
+      From animals nearby.</p>
+      <p>And before you know it,<br>
+      The whole landscape<br>
+      Has slipped away<br>
+      In the blink of an eye.</p>
+      <p>How wonderful it is<br>
+      To belong<br>
+      To Mother Nature.<br>
+      What quiet joy<br>
+      There is<br>
+      In simply existing.</p>
+      <p>Sometimes,<br>
+      One remembered moment<br>
+      Can brighten a lifetime,<br>
+      Like a thousand<br>
+      Christmas lights<br>
+      Coming alive.</p>
+      <p>Dream boldly.<br>
+      Aim high.<br>
+      Reach for the stars.</p>
+      <p>But don't forget<br>
+      The smaller constellations:<br>
+      The moments of love,<br>
+      Joy,<br>
+      And kindness<br>
+      That quietly light the way.</p>
+      <p><em>&ldquo;My life is sustained by the world of beauty which you will see wherever you rest your eyes, and this beauty is nature itself.&rdquo;<br>
+      &mdash; Kahlil Gibran</em></p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
