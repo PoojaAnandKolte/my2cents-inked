@@ -512,8 +512,9 @@ function getRelatedPosts(post, limit = 3) {
     .slice(0, limit);
 }
 
-function getAdjacentPosts(post) {
-  const sorted = [...POSTS].sort((a, b) => new Date(b.date) - new Date(a.date));
+function getAdjacentPosts(post, categoryFilter = null) {
+  const pool = categoryFilter ? POSTS.filter((p) => p.category === categoryFilter) : POSTS;
+  const sorted = [...pool].sort((a, b) => new Date(b.date) - new Date(a.date));
   const index = sorted.findIndex((p) => p.slug === post.slug);
   return {
     newer: index > 0 ? sorted[index - 1] : null,

@@ -941,6 +941,18 @@ section { padding-block: var(--space-6); }
 .prose a { color: var(--color-terracotta); text-decoration: underline; text-underline-offset: 3px; }
 .prose strong { color: var(--color-ink); }
 
+/* Poem body — generous whitespace, no justification, nothing decorative */
+.poem-body {
+  max-width: var(--measure);
+  font-family: var(--font-quote);
+  font-size: var(--step-1);
+  line-height: 2;
+  color: var(--color-ink);
+  text-align: left;
+}
+.poem-body > * + * { margin-top: var(--space-4); }
+.poem-body em { color: var(--color-muted); }
+
 /* Editorial sign-off — a quiet closing, not a pull-quote or a byline card */
 .signoff { margin-top: var(--space-7); }
 .signoff__name {

@@ -247,8 +247,9 @@ function renderPost() {
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.setAttribute("content", post.excerpt);
 
+  const isPoem = post.category === "Poetry";
   const related = getRelatedPosts(post);
-  const { newer, older } = getAdjacentPosts(post);
+  const { newer, older } = getAdjacentPosts(post, isPoem ? "Poetry" : null);
   const accent = categoryAccentClass(post.category);
   const breadcrumb = CREATIVE_CATEGORIES.includes(post.category)
     ? `
@@ -274,10 +275,11 @@ function renderPost() {
     <div class="reading-progress" data-reading-progress></div>
     <header class="post-header wrap">
       ${breadcrumb}
-      <p class="eyebrow ${accent}">${post.category}</p>
+      ${isPoem ? "" : `<p class="eyebrow ${accent}">${post.category}</p>`}
       <h1>${post.title}</h1>
-      <p class="lede">${post.excerpt}</p>
+      ${isPoem ? "" : `<p class="lede">${post.excerpt}</p>`}
       <div class="post-meta">
+        ${isPoem ? `<span class="badge badge-poetry">Poem</span><span class="dot"></span>` : ""}
         <span class="byline-avatar">${initials(post.author)}</span>
         <span><strong style="color:var(--color-ink)">${post.author}</strong></span>
         <span class="dot"></span>
@@ -287,8 +289,8 @@ function renderPost() {
       </div>
     </header>
     <div class="wrap">
-      <div class="ornament ${post.cover} post-cover" aria-hidden="true"></div>
-      <article class="prose" data-article>
+      ${isPoem ? "" : `<div class="ornament ${post.cover} post-cover" aria-hidden="true"></div>`}
+      <article class="${isPoem ? "poem-body" : "prose"}" data-article>
         ${post.content}
       </article>
       <div class="tag-list mt-4">
