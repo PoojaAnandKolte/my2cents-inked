@@ -189,16 +189,12 @@
         <a class="link-underline" href="editors-note.html">Read the full note &rarr;</a>
       </div>
       <div class="editor-note">
-        <div class="prose">
-          <p>Medicine has taught me, more than anything else, how to listen. A consultation is short, and most of what a person needs to say rarely fits inside it — so I've spent twenty years learning to hear the sentence underneath the sentence, the question someone almost asked, the worry that arrives disguised as something else.</p>
-          <p>Writing is where those conversations get to continue. A patient's offhand remark, a poem I couldn't stop thinking about, a hard case from teaching rounds — some of it deserves more room than a consultation allows, and this is where I've made that room.</p>
-          <p>My2cents Inked is where medicine, literature, and everyday life meet, because I've never quite believed they were as separate as my training implied. A piece on menopause and a poem about a mother's suitcase live on the same page here, for the same reason: both came from paying attention. I hope some of it is useful to you, and I hope all of it keeps you company for a few unhurried minutes.</p>
-          <div class="editor-note__sign">
-            <span class="byline-avatar">PW</span>
-            <div>
-              <strong>Dr. Pooja Wadekar</strong>
-              <span>Obstetrician &amp; gynaecologist, educator, and writer</span>
-            </div>
+        <div class="prose" data-editors-note-excerpt></div>
+        <div class="editor-note__sign">
+          <span class="byline-avatar">PW</span>
+          <div>
+            <strong>Dr. Pooja Wadekar</strong>
+            <span>Obstetrician &amp; gynaecologist, educator, and writer</span>
           </div>
         </div>
       </div>
@@ -297,7 +293,11 @@
 
 <script src="assets/js/posts.js"></script>
 <script src="assets/js/blog.js"></script>
+<script src="assets/js/editors-note.js"></script>
 <script src="assets/js/main.js"></script>
-<script>renderHome();</script>
+<script>
+  renderHome();
+  renderEditorsNoteExcerpt("[data-editors-note-excerpt]");
+</script>
 </body>
 </html>
