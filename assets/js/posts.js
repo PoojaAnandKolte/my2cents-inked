@@ -279,6 +279,10 @@ const POSTS = [
       <p>And of course,<br>
       There they were&mdash;<br>
       Dog prints.</p>
+      <figure class="poem-photo">
+        <img src="assets/img/poems/woof-woof-shaggy.jpg" alt="Shaggy the dog standing in profile on a tiled floor, ears alert." width="800" height="1056" loading="lazy" decoding="async">
+        <figcaption>Shaggy</figcaption>
+      </figure>
     `,
   },
 ];

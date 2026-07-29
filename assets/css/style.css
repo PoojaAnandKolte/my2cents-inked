@@ -953,6 +953,26 @@ section { padding-block: var(--space-6); }
 .poem-body > * + * { margin-top: var(--space-4); }
 .poem-body em { color: var(--color-muted); }
 
+/* A photograph placed after a poem — a quiet epilogue, not an illustration */
+.poem-photo {
+  margin-top: var(--space-7);
+  text-align: center;
+}
+.poem-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+  margin-inline: auto;
+}
+.poem-photo figcaption {
+  margin-top: var(--space-2);
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: var(--step--1);
+  color: var(--color-muted);
+}
+
 /* Editorial sign-off — a quiet closing, not a pull-quote or a byline card */
 .signoff { margin-top: var(--space-7); }
 .signoff__name {
