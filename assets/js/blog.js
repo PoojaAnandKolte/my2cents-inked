@@ -154,6 +154,64 @@ function initListing({ fixedCategory = null } = {}) {
   render();
 }
 
+/* ---------------- Creative archive (Essays + Stories + Poetry, unified) ---------------- */
+const CREATIVE_BADGE = {
+  Essays: { label: "Essay", class: "badge-essays" },
+  Stories: { label: "Story", class: "badge-stories" },
+  Poetry: { label: "Poem", class: "badge-poetry" },
+};
+
+function creativeEntryHTML(post) {
+  const badge = CREATIVE_BADGE[post.category];
+  return `
+    <article class="archive-entry reveal">
+      <div class="archive-entry__top">
+        <span class="badge ${badge.class}">${badge.label}</span>
+        <span class="archive-entry__meta">${formatDate(post.date)} <span class="dot"></span> ${post.readingTime} min read</span>
+      </div>
+      <h2 class="archive-entry__title"><a href="post.html?slug=${post.slug}">${post.title}</a></h2>
+      <p class="archive-entry__excerpt">${post.excerpt}</p>
+    </article>`;
+}
+
+function initCreativeArchive() {
+  const list = document.querySelector("[data-archive-list]");
+  if (!list) return;
+
+  const tabs = document.querySelectorAll("[data-archive-tab]");
+  const resultCount = document.querySelector("[data-result-count]");
+  const emptyState = document.querySelector("[data-empty-state]");
+  const posts = POSTS.filter((p) => CREATIVE_CATEGORIES.includes(p.category));
+  let activeCategory = null;
+
+  function render() {
+    const results = posts
+      .filter((p) => !activeCategory || p.category === activeCategory)
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+    list.innerHTML = results.map(creativeEntryHTML).join("");
+    if (resultCount) {
+      resultCount.textContent = `${results.length} ${results.length === 1 ? "piece" : "pieces"}`;
+    }
+    if (emptyState) emptyState.hidden = results.length !== 0;
+    list.hidden = results.length === 0;
+    window.revealNew && window.revealNew(list);
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const val = tab.getAttribute("data-archive-tab");
+      activeCategory = val === "all" ? null : val;
+      tabs.forEach((t) => {
+        t.classList.toggle("is-active", t === tab);
+        t.setAttribute("aria-selected", t === tab ? "true" : "false");
+      });
+      render();
+    });
+  });
+
+  render();
+}
+
 function renderTagChips(selector, category = null) {
   const el = document.querySelector(selector);
   if (!el) return;
