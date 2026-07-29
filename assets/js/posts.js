@@ -139,8 +139,8 @@ const POSTS = [
     `,
   },
   {
-    slug: "kitchen-recipe",
-    title: "Kitchen Recipe",
+    slug: "chicken-soup-anyone",
+    title: "Chicken Soup, Anyone?",
     category: "Poetry",
     tags: ["poetry", "hope", "cooking", "everyday-life", "resilience", "joy"],
     excerpt: "A playful recipe that replaces ingredients with hope, serenity, music, and second chances—because life's best dishes are rarely perfect the first time.",
