@@ -285,6 +285,67 @@ const POSTS = [
       </figure>
     `,
   },
+  {
+    slug: "jupiter",
+    title: "Jupiter",
+    category: "Poetry",
+    tags: ["poetry", "astronomy", "jupiter", "science", "space", "wonder"],
+    excerpt: "Jupiter introduces itself with the confidence of a giant, revealing that science, mythology, and poetry often orbit the same sun.",
+    date: "2026-08-04",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-7",
+    content: `
+      <p>I am Jupiter,<br>
+      Mightiest of this system,<br>
+      Bubbling with hydrogen<br>
+      And helium.</p>
+      <p>Marduk,<br>
+      Zeus,<br>
+      Thor&mdash;<br>
+      All bear my emblem,<br>
+      As I keep the Oort Cloud<br>
+      Beyond your realm.</p>
+      <p>I have seventy-nine beautiful moons<br>
+      That even made Galileo swoon.<br>
+      Their Laplace resonance,<br>
+      A faithful platoon,<br>
+      Never lets me<br>
+      Feel marooned.</p>
+      <p>My Great Red Spot,<br>
+      You call a deformity,<br>
+      Is my own<br>
+      Anticyclonic storm.<br>
+      I've shaped it<br>
+      Into something free,<br>
+      That no disaster<br>
+      Could ever outperform.</p>
+      <p>Yes, I have rings,<br>
+      And a magnetosphere.<br>
+      Auroras too,<br>
+      Where Io's particles cohere.<br>
+      A few crystals<br>
+      Of frozen ammonia<br>
+      Float through my atmosphere.<br>
+      Ta-da!<br>
+      Don't I look<br>
+      A little less austere?</p>
+      <p>I sculpt<br>
+      The Kirkwood Gaps,<br>
+      And shepherd<br>
+      The asteroid belt.<br>
+      The beauty<br>
+      Of Lagrange points<br>
+      Must simply be felt.</p>
+      <p>Though I have<br>
+      No surface<br>
+      To stand upon,<br>
+      Or anything<br>
+      To be held,<br>
+      "Jovian"<br>
+      Is how I am spelled.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
