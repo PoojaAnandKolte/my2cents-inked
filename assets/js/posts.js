@@ -449,6 +449,46 @@ const POSTS = [
       <p>I tell every new resident some version of the same thing on their first week: ask the obvious question, especially when you suspect it's obvious. Half the time you'll learn something you were missing. The other half, you'll have handed your teacher a small, necessary mirror.</p>
     `,
   },
+  {
+    slug: "the-two-cents-lilies",
+    title: "The Two Cents Lilies",
+    category: "Poetry",
+    tags: ["poetry", "relationships", "love", "flowers", "reflection"],
+    excerpt: "A bouquet of lilies quietly witnesses two people rediscovering each other through silence, patience, and small acts of love.",
+    date: "2026-07-29",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-2",
+    content: `
+      <p>The two-cent lilies you got me<br>
+      From the pavement the other day.<br>
+      Funny thing was,<br>
+      I didn't really have a say.<br>
+      I stood watching<br>
+      The raindrops join the ocean,<br>
+      Happy for them<br>
+      To finally be complete.<br>
+      Softly, I peeked into my soul too,<br>
+      Wondering what she was up to.<br>
+      She had been so silent<br>
+      Since he arrived—<br>
+      No more tantrums,<br>
+      No more cries.<br>
+      She stood quietly,<br>
+      Watching the raindrops too.<br>
+      The stillness<br>
+      Just before the tempest.<br>
+      Her eyelashes were wet<br>
+      As she looked up at me.<br>
+      Why?<br>
+      I couldn't see.<br>
+      He returned,<br>
+      Lilies in his hand.<br>
+      I smiled<br>
+      At my man.<br>
+      Why these changes?</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
