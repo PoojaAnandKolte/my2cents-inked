@@ -407,6 +407,53 @@ const POSTS = [
       &mdash; Kahlil Gibran</em></p>
     `,
   },
+  {
+    slug: "solitude",
+    title: "Solitude",
+    category: "Poetry",
+    tags: ["poetry", "solitude", "reflection", "resilience", "mental-well-being"],
+    excerpt: "A gentle reminder that solitude need not be feared; sometimes, allowing ourselves to feel deeply is the first step towards finding peace again.",
+    date: "2026-08-07",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-2",
+    content: `
+      <p>Surrounded by people,<br>
+      Life feels full.<br>
+      You feel connected,<br>
+      As though you belong.</p>
+      <p>But sometimes,<br>
+      When you are alone,<br>
+      Quietly wondering<br>
+      Within your home,<br>
+      Watching the rain<br>
+      Beyond your window,<br>
+      Solitude comes<br>
+      Softly knocking,<br>
+      Wrapping you<br>
+      In its gentle,<br>
+      Cold embrace,<br>
+      As silent tears<br>
+      Find your face.</p>
+      <p>When that happens,<br>
+      Don't rush<br>
+      To prove your strength.<br>
+      Let yourself sink.<br>
+      Let the feeling<br>
+      Become a part of you.<br>
+      Let yourself<br>
+      Reach the ocean floor.</p>
+      <p>Then,<br>
+      When peace<br>
+      Finds you again,<br>
+      Rise slowly.<br>
+      Smile at the darkness<br>
+      As it slips away,<br>
+      And return<br>
+      A little lighter<br>
+      Than before.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
