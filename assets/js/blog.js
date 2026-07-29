@@ -75,15 +75,29 @@ function renderInto(selector, html) {
 /* ---------------- Home page ---------------- */
 function renderHome() {
   const featured = getFeaturedPosts();
-  const featuredPost = featured[0];
+  const featuredPost = featured[0] || getLatestPosts(1)[0];
   const latest = getLatestPosts(6, featuredPost?.slug);
-  const mostRecent = getLatestPosts(1)[0];
 
   const latestLink = document.querySelector("[data-latest-link]");
-  if (latestLink && mostRecent) latestLink.href = `post.html?slug=${mostRecent.slug}`;
+  if (latestLink) {
+    if (featuredPost) {
+      latestLink.href = `post.html?slug=${featuredPost.slug}`;
+      latestLink.hidden = false;
+    } else {
+      latestLink.hidden = true;
+    }
+  }
 
-  renderInto("[data-featured-article]", featuredPost ? cardHTML(featuredPost, "featured") : "");
-  renderInto("[data-latest-grid]", latest.map((p, i) => cardHTML(p, i === 0 ? "wide" : "grid")).join(""));
+  renderInto(
+    "[data-featured-article]",
+    featuredPost ? cardHTML(featuredPost, "featured") : `<p class="empty-state">New writing will appear here.</p>`
+  );
+  renderInto(
+    "[data-latest-grid]",
+    latest.length
+      ? latest.map((p, i) => cardHTML(p, i === 0 ? "wide" : "grid")).join("")
+      : `<p class="empty-state" style="grid-column:1/-1">More writing is on its way — check back soon.</p>`
+  );
   window.revealNew && window.revealNew(document);
 }
 
@@ -115,13 +129,23 @@ function initListing({ fixedCategory = null } = {}) {
     return true;
   }
 
+  const categoryHasAnyPosts = fixedCategory ? POSTS.some((p) => p.category === fixedCategory) : POSTS.length > 0;
+
   function render() {
     const results = POSTS.filter(matches).sort((a, b) => new Date(b.date) - new Date(a.date));
     grid.innerHTML = results.map((p) => cardHTML(p)).join("");
     if (resultCount) {
       resultCount.textContent = `${results.length} ${results.length === 1 ? "piece" : "pieces"}${state.query ? ` for "${state.query}"` : ""}`;
     }
-    if (emptyState) emptyState.hidden = results.length !== 0;
+    if (emptyState) {
+      emptyState.hidden = results.length !== 0;
+      if (results.length === 0) {
+        const primary = emptyState.querySelector("[data-empty-primary]");
+        const secondary = emptyState.querySelector("[data-empty-secondary]");
+        if (primary) primary.textContent = categoryHasAnyPosts ? "No pieces match that search." : "New writing will appear here.";
+        if (secondary) secondary.textContent = categoryHasAnyPosts ? "Try a different keyword, or clear the tag filter." : "Check back soon, or explore another section in the meantime.";
+      }
+    }
     grid.hidden = results.length === 0;
     window.revealNew && window.revealNew(grid);
   }
