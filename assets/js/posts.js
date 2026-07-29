@@ -197,6 +197,52 @@ const POSTS = [
       And start over again.</p>
     `,
   },
+  {
+    slug: "painted",
+    title: "Painted",
+    category: "Poetry",
+    tags: ["poetry", "love", "identity", "self-discovery", "growth", "reflection"],
+    excerpt: "A canvas believes it is complete until love reveals that the colours it was searching for had always been within.",
+    date: "2026-08-02",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-3",
+    content: `
+      <p>I was a new canvas,<br>
+      Untouched by love.<br>
+      Upon my pearl-white surface,<br>
+      Pride quietly thrived.</p>
+      <p>Happy with things<br>
+      Just as they were,<br>
+      Perfect each day,<br>
+      Precisely austere.</p>
+      <p>Dawn arrived,<br>
+      But not my awakening.<br>
+      He saw the white,<br>
+      And smiled to himself.</p>
+      <p>Slowly he approached,<br>
+      A twinkle in his eye.<br>
+      He picked up a brush,<br>
+      And let out a sigh.</p>
+      <p>Brushstrokes danced,<br>
+      Every colour poured.<br>
+      The white disappeared,<br>
+      And so did my certainty.</p>
+      <p>A tangled web of colours,<br>
+      Beautiful as a fairy tale,<br>
+      Now stretched across the canvas,<br>
+      Like memory itself.</p>
+      <p>But the colours were mine,<br>
+      Kept bottled up all along.<br>
+      Reality merely opened the lid<br>
+      Of the next waiting cup.</p>
+      <p>I realised<br>
+      Love and magic<br>
+      Come from within.<br>
+      Being painted<br>
+      Simply lets them be seen.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
