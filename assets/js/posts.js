@@ -138,6 +138,65 @@ const POSTS = [
       <p><em>&mdash;Written on 1 July 2016 (Death anniversary)</em></p>
     `,
   },
+  {
+    slug: "kitchen-recipe",
+    title: "Kitchen Recipe",
+    category: "Poetry",
+    tags: ["poetry", "hope", "cooking", "everyday-life", "resilience", "joy"],
+    excerpt: "A playful recipe that replaces ingredients with hope, serenity, music, and second chances—because life's best dishes are rarely perfect the first time.",
+    date: "2026-08-01",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-8",
+    content: `
+      <p>With a little mischief,<br>
+      Let's step into the kitchen today.<br>
+      Open the window,<br>
+      And let fresh ideas come our way.</p>
+      <p>Let's throw away<br>
+      The leftovers of yesterday's criticism,<br>
+      And start afresh,<br>
+      Lighting the stove with profound enthusiasm.</p>
+      <p>To begin,<br>
+      We'll need a pot full of shimmering hope.<br>
+      Yeah, I know it sounds crazy,<br>
+      But there's no need to mope!</p>
+      <p>Add a few pinches of sugar<br>
+      For every bitterness ever held,<br>
+      And two spoonfuls of serenity<br>
+      For every soreness felt.</p>
+      <p>Looks like the oil has heated!<br>
+      We need to hurry.<br>
+      Chop up<br>
+      Everything you worry about.</p>
+      <p>Drop it into the pan,<br>
+      And we'll fry those tense, testy times away.<br>
+      Oh, what a dish we're making,<br>
+      Don't you say?</p>
+      <p>I'll turn on the music!<br>
+      &ldquo;Hey, what's your favourite song?&rdquo;<br>
+      Ready?<br>
+      Let's dance and sing along.</p>
+      <p>Serve the refreshments<br>
+      While you jig and sway.<br>
+      Pop!<br>
+      And all the bottled-up worries float away.</p>
+      <p>Yikes!<br>
+      What's that burnt smell in the room?</p>
+      <p>Looks like we messed up!<br>
+      We're dooooomed!</p>
+      <p>Wait...<br>
+      It's just one dish<br>
+      Of the millions we'll make.<br>
+      A tiny stumble<br>
+      In the efforts we take.</p>
+      <p>So there's no need to cry<br>
+      Over spilled (and burnt) milk.<br>
+      Just clean up the mess,<br>
+      Clink, clink...<br>
+      And start over again.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
