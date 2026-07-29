@@ -243,6 +243,44 @@ const POSTS = [
       Simply lets them be seen.</p>
     `,
   },
+  {
+    slug: "woof-woof",
+    title: "Woof Woof",
+    category: "Poetry",
+    tags: ["poetry", "dogs", "friendship", "loss", "wonder", "hope"],
+    excerpt: "A playful conversation carried across impossible distances, where a familiar bark becomes a reminder to keep exploring, laughing, and following the trail ahead.",
+    date: "2026-08-03",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-4",
+    content: `
+      <p>&ldquo;Woof woof,&rdquo; he dials<br>
+      Now every once in a while.<br>
+      I hear his lopsided,<br>
+      Funky little smile,<br>
+      Calling from a thousand miles<br>
+      To discuss the world under starlight.</p>
+      <p>"I miss you already,"<br>
+      A whisper.<br>
+      The sun and wind through your fur,<br>
+      Your tail wagging,<br>
+      Your ears cocked,<br>
+      Gazing upwards,<br>
+      Looking for aether,<br>
+      Somehow making everything clearer.</p>
+      <p>Woof woof!<br>
+      There are no accidents.<br>
+      It's time to explore,<br>
+      To find new paints,<br>
+      To look beyond<br>
+      Every breaking point,<br>
+      To laugh<br>
+      At all the bafflements.</p>
+      <p>And of course,<br>
+      There they were&mdash;<br>
+      Dog prints.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
