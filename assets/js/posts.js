@@ -485,8 +485,7 @@ const POSTS = [
       He returned,<br>
       Lilies in his hand.<br>
       I smiled<br>
-      At my man.<br>
-      Why these changes?</p>
+      At my man.</p>
     `,
   },
 ];
