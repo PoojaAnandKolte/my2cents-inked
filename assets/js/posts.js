@@ -97,6 +97,47 @@ const POSTS = [
       How God's plans fit.</p>
     `,
   },
+  {
+    slug: "ajoba",
+    title: "Ajoba",
+    category: "Poetry",
+    tags: ["poetry", "family", "grandfather", "grief", "memory", "love"],
+    excerpt: "A quiet meditation on losing a grandfather, the questions death leaves behind, and the memories that continue to walk beside us.",
+    date: "2026-07-31",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-6",
+    content: `
+      <p>&ldquo;Songs of the dead<br>
+      Are the laments of the living.&rdquo;</p>
+      <p>I don't know what happens later.<br>
+      Is there life after death?</p>
+      <p>I don't know what happened to him<br>
+      After I laid a wreath upon his coffin.</p>
+      <p>I wonder if there was a flash of light,<br>
+      Or a whisper in his ear,<br>
+      The moment he bid goodbye<br>
+      To those he held near and dear.</p>
+      <p>I need to know<br>
+      How he felt when death drew near,<br>
+      Because I need to know<br>
+      He was at peace, not in fear.</p>
+      <p>We all have that one person<br>
+      We wish we could bring back.<br>
+      Even though we know<br>
+      It can only remain a quiet thought.</p>
+      <p>But they wouldn't want us<br>
+      To grieve forever.<br>
+      They would want us<br>
+      To cherish the life they shared with us.</p>
+      <p>So I still smile<br>
+      As though our eyes have met again.<br>
+      And I still walk,<br>
+      My little finger wrapped around yours,<br>
+      Down our memory lane.</p>
+      <p><em>&mdash;Written on 1 July 2016 (Death anniversary)</em></p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
