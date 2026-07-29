@@ -45,6 +45,58 @@ const POSTS = [
       At my man.</p>
     `,
   },
+  {
+    slug: "where-can-peace-be-found",
+    title: "Where Can Peace Be Found?",
+    category: "Poetry",
+    tags: ["poetry", "observation", "everyday-life", "bazaar", "peace", "reflection"],
+    excerpt: "Dragged reluctantly into a crowded bazaar, I discover that peace isn't always found in silence—it sometimes hides in the heart of chaos.",
+    date: "2026-07-21",
+    author: "Dr. Pooja Wadekar",
+    featured: false,
+    cover: "cover-5",
+    content: `
+      <p>I was sour, being dragged to a bazaar today,<br>
+      Coughed and spluttered throughout the way.<br>
+      It was only on Saturdays and Mondays,<br>
+      So imagine the utter chaos of that place!</p>
+      <p>&ldquo;Dear God,<br>
+      Do people actually like this?<br>
+      Serenity and peace,<br>
+      Don't they miss?&rdquo;</p>
+      <p>To give it a try,<br>
+      I closed my eyes and counted from five.<br>
+      You'll be surprised to know what happened<br>
+      When I opened my eyes.</p>
+      <p>Stretched overhead was a vast clear blue sky,<br>
+      Speckled with birds that merrily fly.<br>
+      Wafted the tantalising smell<br>
+      Of dried spices of all sorts.<br>
+      I got to taste water,<br>
+      Cooled in beautiful earthen pots.</p>
+      <p>Sunlight was scattered<br>
+      By dust in the air,<br>
+      Adding sparkle<br>
+      To the eyes of dolls, intricate and fair.</p>
+      <p>Colourful dancing tents<br>
+      Whistled slightly overhead.<br>
+      Beneath them,<br>
+      Furry cats dozed, happily well-fed.</p>
+      <p>Every yell,<br>
+      Every bargain,<br>
+      Now seemed to be following a rhyme.<br>
+      Suddenly,<br>
+      All of it felt so divine.</p>
+      <p>Couldn't even remember<br>
+      What I was thinking about,<br>
+      As I joined wholeheartedly<br>
+      The swaying crowd.</p>
+      <p>Something about peace, was it?<br>
+      Ah,<br>
+      I see now<br>
+      How God's plans fit.</p>
+    `,
+  },
 ];
 
 /* --- Helpers shared across pages --- */
