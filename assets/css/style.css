@@ -33,6 +33,9 @@
   --color-spice: #8f5a1c;
   --color-spice-soft: #d99a4f;
   --color-spice-wash: #f5e6d0;
+  --color-teal: #2d6b63;
+  --color-teal-soft: #6fa89d;
+  --color-teal-wash: #e2eeec;
 
   --color-focus: #a8502f;
 
@@ -101,6 +104,9 @@
   --color-spice: #e0a862;
   --color-spice-soft: #8a5a26;
   --color-spice-wash: #332a1a;
+  --color-teal: #7dbfb3;
+  --color-teal-soft: #3a6e64;
+  --color-teal-wash: #1c2b28;
 
   --color-focus: #e4926f;
 
@@ -249,6 +255,8 @@ section { padding-block: var(--space-6); }
 .eyebrow.accent-poetry { color: var(--color-lavender); }
 .eyebrow.accent-books { color: var(--color-gold); }
 .eyebrow.accent-recipes { color: var(--color-spice); }
+.eyebrow.accent-exploration { color: var(--color-teal); }
+.eyebrow.accent-creative { color: var(--color-ink-soft); }
 
 .card.accent-womens-health { border-top: 3px solid var(--color-sage-soft); }
 .card.accent-medicine { border-top: 3px solid var(--color-slate-soft); }
@@ -257,6 +265,7 @@ section { padding-block: var(--space-6); }
 .card.accent-poetry { border-top: 3px solid var(--color-lavender-soft); }
 .card.accent-books { border-top: 3px solid var(--color-gold-soft); }
 .card.accent-recipes { border-top: 3px solid var(--color-spice-soft); }
+.card.accent-exploration { border-top: 3px solid var(--color-teal-soft); }
 
 /* ==========================================================================
    Header / Nav
@@ -715,6 +724,8 @@ section { padding-block: var(--space-6); }
 .category-card.accent-poetry { border-top: 3px solid var(--color-lavender-soft); }
 .category-card.accent-books { border-top: 3px solid var(--color-gold-soft); }
 .category-card.accent-recipes { border-top: 3px solid var(--color-spice-soft); }
+.category-card.accent-exploration { border-top: 3px solid var(--color-teal-soft); }
+.category-card.accent-creative { border-top: 3px solid var(--color-border-strong); }
 .category-card.accent-womens-health .category-card__icon { color: var(--color-sage); }
 .category-card.accent-medicine .category-card__icon { color: var(--color-slate); }
 .category-card.accent-essays .category-card__icon { color: var(--color-ink-soft); }
@@ -722,6 +733,8 @@ section { padding-block: var(--space-6); }
 .category-card.accent-poetry .category-card__icon { color: var(--color-lavender); }
 .category-card.accent-books .category-card__icon { color: var(--color-gold); }
 .category-card.accent-recipes .category-card__icon { color: var(--color-spice); }
+.category-card.accent-exploration .category-card__icon { color: var(--color-teal); }
+.category-card.accent-creative .category-card__icon { color: var(--color-ink-soft); }
 
 /* Women's Health gets quiet top billing: a wider feature band above the topic grid */
 .topic-feature {

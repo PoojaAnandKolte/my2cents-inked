@@ -464,7 +464,7 @@ POSTS.forEach((p) => {
   p.excerptWords = p.excerpt;
 });
 
-const CATEGORIES = ["Women's Health", "Medicine", "Essays", "Stories", "Poetry", "Books & Chapters"];
+const CATEGORIES = ["Women's Health", "Medicine", "Essays", "Stories", "Poetry", "Books & Chapters", "Exploration"];
 
 const CATEGORY_ACCENTS = {
   "Women's Health": "accent-womens-health",
@@ -473,6 +473,7 @@ const CATEGORY_ACCENTS = {
   Stories: "accent-stories",
   Poetry: "accent-poetry",
   "Books & Chapters": "accent-books",
+  Exploration: "accent-exploration",
 };
 
 function categoryAccentClass(cat) {

@@ -12,9 +12,12 @@ function categoryHref(cat) {
     Stories: "stories.html",
     Poetry: "poetry.html",
     "Books & Chapters": "books.html",
+    Exploration: "exploration.html",
   };
   return map[cat] || "journal.html";
 }
+
+const CREATIVE_CATEGORIES = ["Essays", "Stories", "Poetry"];
 
 function cardHTML(post, variant = "grid") {
   const catHref = categoryHref(post.category);
@@ -189,10 +192,30 @@ function renderPost() {
   const related = getRelatedPosts(post);
   const { newer, older } = getAdjacentPosts(post);
   const accent = categoryAccentClass(post.category);
+  const breadcrumb = CREATIVE_CATEGORIES.includes(post.category)
+    ? `
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="creative.html">Creative</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="${categoryHref(post.category)}">${post.category}</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">${post.title}</span>
+      </nav>`
+    : `
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href="${categoryHref(post.category)}">${post.category}</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span aria-current="page">${post.title}</span>
+      </nav>`;
 
   container.innerHTML = `
     <div class="reading-progress" data-reading-progress></div>
     <header class="post-header wrap">
+      ${breadcrumb}
       <p class="eyebrow ${accent}">${post.category}</p>
       <h1>${post.title}</h1>
       <p class="lede">${post.excerpt}</p>
