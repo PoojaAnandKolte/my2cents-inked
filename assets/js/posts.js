@@ -16,6 +16,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-2",
+    featuredImage: "assets/img/poems/the-two-cents-lilies-featured.jpg",
     content: `
       <p>The two-cent lilies you got me<br>
       From the pavement the other day.<br>
@@ -55,6 +56,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-5",
+    featuredImage: "assets/img/poems/where-can-peace-be-found-featured.jpg",
     content: `
       <p>I was sour, being dragged to a bazaar today,<br>
       Coughed and spluttered throughout the way.<br>
@@ -107,6 +109,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-6",
+    featuredImage: "assets/img/poems/ajoba-featured.jpg",
     content: `
       <p>&ldquo;Songs of the dead<br>
       Are the laments of the living.&rdquo;</p>
@@ -148,6 +151,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-8",
+    featuredImage: "assets/img/poems/chicken-soup-anyone-featured.jpg",
     content: `
       <p>With a little mischief,<br>
       Let's step into the kitchen today.<br>
@@ -207,6 +211,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-3",
+    featuredImage: "assets/img/poems/painted-featured.jpg",
     content: `
       <p>I was a new canvas,<br>
       Untouched by love.<br>
@@ -253,6 +258,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-4",
+    featuredImage: "assets/img/poems/woof-woof-featured.jpg",
     content: `
       <p>&ldquo;Woof woof,&rdquo; he dials<br>
       Now every once in a while.<br>
@@ -295,6 +301,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-7",
+    featuredImage: "assets/img/poems/jupiter-featured.jpg",
     content: `
       <p>I am Jupiter,<br>
       Mightiest of this system,<br>
@@ -356,6 +363,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-1",
+    featuredImage: "assets/img/poems/the-journey-featured.jpg",
     content: `
       <p>The fresh touch of breeze<br>
       Upon your face.<br>
@@ -417,6 +425,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-2",
+    featuredImage: "assets/img/poems/solitude-featured.jpg",
     content: `
       <p>Surrounded by people,<br>
       Life feels full.<br>

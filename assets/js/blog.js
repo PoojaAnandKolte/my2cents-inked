@@ -187,14 +187,18 @@ const CREATIVE_BADGE = {
 
 function creativeEntryHTML(post) {
   const badge = CREATIVE_BADGE[post.category];
+  const image = post.featuredImage
+    ? `<div class="archive-entry__image"><img src="${post.featuredImage}" alt="Featured illustration for ${post.title}" width="640" height="640" loading="lazy" decoding="async"></div>`
+    : "";
   return `
     <article class="archive-entry reveal">
+      ${image}
+      <h2 class="archive-entry__title"><a href="post.html?slug=${post.slug}">${post.title}</a></h2>
+      <p class="archive-entry__excerpt">${post.excerpt}</p>
       <div class="archive-entry__top">
         <span class="badge ${badge.class}">${badge.label}</span>
         <span class="archive-entry__meta">${formatDate(post.date)} <span class="dot"></span> ${post.readingTime} min read</span>
       </div>
-      <h2 class="archive-entry__title"><a href="post.html?slug=${post.slug}">${post.title}</a></h2>
-      <p class="archive-entry__excerpt">${post.excerpt}</p>
     </article>`;
 }
 
