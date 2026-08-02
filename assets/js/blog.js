@@ -19,9 +19,16 @@ function categoryHref(cat) {
 
 const CREATIVE_CATEGORIES = ["Essays", "Stories", "Poetry"];
 
+function cardCoverHTML(post) {
+  return post.featuredImage
+    ? `<img src="${post.featuredImage}" alt="Featured illustration for ${post.title}" loading="lazy" decoding="async">`
+    : "";
+}
+
 function cardHTML(post, variant = "grid") {
   const catHref = categoryHref(post.category);
   const accent = categoryAccentClass(post.category);
+  const coverOrnamentClass = post.featuredImage ? "" : `ornament ${post.cover}`;
   if (variant === "row") {
     return `
       <article class="card card--row ${accent} reveal">
@@ -39,7 +46,8 @@ function cardHTML(post, variant = "grid") {
   if (variant === "featured" || variant === "wide") {
     return `
       <article class="card card--featured ${variant === "wide" ? "card--wide" : ""} ${accent} reveal">
-        <div class="ornament ${post.cover} card__cover" aria-hidden="true">
+        <div class="${coverOrnamentClass} card__cover" aria-hidden="true">
+          ${cardCoverHTML(post)}
           <a href="${catHref}" class="card__cat">${post.category}</a>
         </div>
         <div class="card__body">
@@ -52,7 +60,8 @@ function cardHTML(post, variant = "grid") {
   }
   return `
     <article class="card ${accent} reveal">
-      <div class="ornament ${post.cover} card__cover" aria-hidden="true">
+      <div class="${coverOrnamentClass} card__cover" aria-hidden="true">
+        ${cardCoverHTML(post)}
         <a href="${catHref}" class="card__cat">${post.category}</a>
       </div>
       <div class="card__body">
