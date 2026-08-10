@@ -929,12 +929,28 @@ section { padding-block: var(--space-6); }
   font-family: var(--font-display); font-weight: 700; color: #1c2417;
   flex-shrink: 0;
 }
-.post-cover { aspect-ratio: 21/9; border-radius: var(--radius-lg); margin-block: var(--space-4); }
+.post-cover { aspect-ratio: 21/9; border-radius: var(--radius-lg); margin-block: var(--space-4); overflow: hidden; }
+.post-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .prose { max-width: var(--measure); font-size: 1.1rem; line-height: 1.8; }
 .prose > * + * { margin-top: var(--space-4); }
 .prose h2 { font-size: var(--step-3); margin-top: var(--space-6); }
 .prose h3 { font-size: var(--step-2); margin-top: var(--space-5); }
+.inline-photo { margin-block: var(--space-5) !important; text-align: center; }
+.inline-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  display: block;
+  margin-inline: auto;
+}
+.inline-photo figcaption {
+  margin-top: var(--space-2);
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: var(--step--1);
+  color: var(--color-muted);
+}
 .prose p { color: var(--color-ink-soft); }
 .prose blockquote {
   border-left: 3px solid var(--color-terracotta-soft);

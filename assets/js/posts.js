@@ -473,6 +473,7 @@ const POSTS = [
     author: "Dr. Pooja Wadekar",
     featured: false,
     cover: "cover-4",
+    featuredImage: "assets/img/exploration/pondicherry-cathedral-hero.jpg",
     content: `
       <p>I arrived in Pondicherry on the 13th of February — the kind of date you register without meaning to, assuming it will matter less than it does. By the 9th of August, I had lived here long enough to stop noticing the streets as new. I had walked most of them, eaten in a rotation of the same five restaurants, learned which auto drivers overcharged and which didn't. And yet, somewhere inside that comfortable familiarity, I had the distinct sense that I had only scratched the surface of the place I was calling home.</p>
       <p>My schedule doesn't leave much room for wondering. I am a doctor, and most of my waking hours are organised around other people's emergencies, or the reading I owe myself to keep up with mine. So when I set an alarm for six on a Sunday morning for something that had nothing to do with either, I noticed the oddness of it before I noticed anything else. I couldn't remember the last time I had woken early for curiosity alone.</p>
@@ -481,11 +482,39 @@ const POSTS = [
       <p>I am not someone who lingers in front of paintings. Give me a museum and I will walk it at a pace that would embarrass anyone who takes art seriously. Until that morning, I treated the buildings of Pondicherry much the same way — I had passed most of them dozens of times, registered a facade here, glanced through an open door there, without ever feeling pulled to look closer. What the tour did, more than anything else, was show me that a building only becomes a story once someone gives you the context to read it. Until then, it's just an object you walk past.</p>
       <p>We started at the Cathedral of the Immaculate Conception. I am an atheist, and churches have never been a natural draw for me, but this one turned out to be an efficient way into the layered colonial history of the town — French, but also Portuguese, Dutch, and traces of an older Spanish-Portuguese architectural inheritance, folded into each other over centuries. I hadn't known, until that morning, how far French colonial history had reached — as far as Vietnam, a fact that sat oddly in my head for the rest of the ride, the way unrelated pieces of geography sometimes do.</p>
       <p>From there we rode to Maison Perumal, a hotel that does something I hadn't quite seen done before: its lower level sits in a traditional Tamil courtyard style, and its upper level shifts, almost without warning, into French colonial. I stood in that courtyard longer than I meant to. It reminded me of afternoons at my grandmother's house, paging through her old Reader's Digest issues, staring at photographs of homes I assumed I'd never see in person — open courtyards, deliberate greenery, water features that existed for no obvious reason except that someone thought a house should have one. Maison Perumal had its own version: a large copper vessel filled with water and lotus stems, sitting in the middle of the courtyard as if it had always been there. I'm closer to thirty than I used to be, and I noticed, standing there, that what draws me now isn't grandeur. It's small, clean, green, warm spaces — the kind that seem built for people to gather in, rather than to impress them.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-maison-perumal-courtyard.jpg" alt="Palm fronds and potted plants around a lily-filled water vessel in the courtyard of Maison Perumal." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>Courtyard at Maison Perumal.</figcaption>
+      </figure>
       <p>The Sri Aurobindo Ashram was closed, it being Sunday, so the guide told us its story instead of showing it to us, which may have suited me better. Sri Aurobindo Ghosh studied overseas, returned to India, was imprisoned for his part in the freedom movement, and underwent — by his own account — a spiritual transformation during that imprisonment that reshaped the rest of his life. What followed was the Ashram, and later, under the guidance of the woman known simply as the Mother, a community built on the idea that people from anywhere in the world could live together with their basic needs held in common. What stayed with me wasn't the spiritual framework, which isn't mine to evaluate, but the practical vision underneath it — a working attempt at peace, built at the scale of daily life, in a world that mostly manages conflict instead of avoiding it.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-ashram-gate.jpg" alt="A closed archway gate at the Sri Aurobindo Ashram, framed by palm fronds and pink rain lilies in the foreground." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>The Ashram gate, closed for Sunday.</figcaption>
+      </figure>
       <p>We passed the old French municipal and government buildings next, and the guide gave us a compressed history of what happened after Indian independence — the layered, occasionally strange relationship between French India, British India, and the Tamil region around it, none of which I'd thought carefully about before. He kept it brief, which I appreciated; some history is better sketched than lectured.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-lok-niwas-gate.jpg" alt="The white gates of Lok Niwas, Pondicherry's Raj Nivas, flanked by palm trees, seen from across the street." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>The gates of Lok Niwas.</figcaption>
+      </figure>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-french-consulate.jpg" alt="The yellow facade of the French Consulate, with a wooden door and a first-floor balcony." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>The French Consulate.</figcaption>
+      </figure>
       <p>Notre Dame des Anges was the stop I didn't expect to remember most clearly. Mass was in progress when we arrived, and we stood at the back while a sermon continued in French. I don't speak the language beyond a few phrases, but I could follow the shape of it — the gentleness in the priest's voice, something that read as compassion even stripped of its actual words. Outside, in the small garden opposite the church, there's a statue of Joan of Arc, and I remember the light on it more precisely than I remember most things from that morning.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-mass-interior.jpg" alt="The nave of a church during Mass, seen from the back pew, with chandeliers and a painted dome above the altar." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>Mass in progress, from the back pew.</figcaption>
+      </figure>
       <p>The last stop was the Cluny embroidery centre, a property that once belonged to a merchant and was later handed to the Cluny sisters, who turned it into a workplace for underprivileged women in the area. The courtyard there might be the most beautiful domestic space I've stood in — not ornate, just proportioned and cared for in a way that's hard to manufacture. I learned, almost as an aside, that the sisters also run a hospice nearby. I've thought about volunteering for a while, in some capacity outside my clinical hours, and something about that detail stayed with me — the idea that caring for people who spent their lives caring for others might be one of the more meaningful ways to spend the time I have to give.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-cluny-courtyard.jpg" alt="A quiet courtyard with a tall palm tree and a circular planter, near the Cluny centre." width="1050" height="1400" loading="lazy" decoding="async">
+        <figcaption>The courtyard near the Cluny centre.</figcaption>
+      </figure>
       <p>By the end of the ride, what had stayed with me wasn't really the architecture, colonial or otherwise. It was the sense, accumulating stop by stop, of how strong Pondicherry's sense of community seemed to be — shaped by Tamil, French, Portuguese, Dutch, and other influences that had, over time, less to do with who governed whom, and more to do with what got built between people. The most durable legacy of the town, it seemed to me, wasn't political. It was the courtyards, the shared institutions, the quiet arrangements — ashram, hospice, embroidery centre, church garden — that kept teaching people, generation after generation, how to live near each other.</p>
+      <figure class="inline-photo">
+        <img src="assets/img/exploration/pondicherry-corridor.jpg" alt="A quiet checkerboard-tiled corridor lined with wooden benches and ornate white plasterwork." width="791" height="1400" loading="lazy" decoding="async">
+        <figcaption>A quiet corridor, on the way out.</figcaption>
+      </figure>
       <p>I began that Sunday morning thinking I was joining a bicycle tour. I ended it having learned, more or less by accident, how to see Pondicherry slowly. The city hadn't changed in those two hours. My attention had.</p>
     `,
   },

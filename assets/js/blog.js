@@ -326,7 +326,9 @@ function renderPost() {
       </div>
     </header>
     <div class="wrap">
-      ${isPoem ? "" : `<div class="ornament ${post.cover} post-cover" aria-hidden="true"></div>`}
+      ${isPoem ? "" : post.featuredImage
+        ? `<div class="post-cover"><img src="${post.featuredImage}" alt="" loading="lazy" decoding="async"></div>`
+        : `<div class="ornament ${post.cover} post-cover" aria-hidden="true"></div>`}
       <article class="${isPoem ? "poem-body" : "prose"}" data-article>
         ${post.content}
       </article>
