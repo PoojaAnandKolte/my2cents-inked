@@ -68,37 +68,44 @@
     const id = String(raw.id || "").trim();
     if (!id) { console.warn("[dogs] Skipped an entry with no id.", raw); return null; }
 
-    const name = String(raw.name || "").trim();
+    const title = String(raw.title || "").trim();   // editorial title, e.g. "The Yellow Wall"
+    const name = String(raw.name || "").trim();     // the dog's actual name, if known
     const neighbourhood = String(raw.neighbourhood || "").trim();
-    const defaultAlt = (name ? `Photograph of ${name}` : "Photograph of a dog") + (neighbourhood ? ` in ${neighbourhood}` : "");
+    const locationNote = String(raw.locationNote || "").trim();
+    const defaultAlt = (name ? `Photograph of ${name}` : "Photograph of a dog") + (neighbourhood || locationNote ? ` at ${locationNote || neighbourhood}` : "");
 
     const photos = [];
-    const addPhoto = (p, altFallback) => {
+    const addPhoto = (p, altFallback, thumbFallback) => {
       if (!p) return;
       const o = typeof p === "string" ? { src: p } : p;
       if (!o.src) return;
-      photos.push({ src: String(o.src), alt: String(o.alt || altFallback || "").trim() || defaultAlt });
+      photos.push({
+        src: String(o.src),
+        thumb: String(o.thumb || thumbFallback || "").trim() || String(o.src),
+        alt: String(o.alt || altFallback || "").trim() || defaultAlt,
+      });
     };
-    addPhoto(raw.photo, raw.photoAlt);
+    addPhoto(raw.photo, raw.photoAlt, raw.thumb);
     (Array.isArray(raw.photos) ? raw.photos : []).forEach((p) => addPhoto(p));
     if (!photos.length) console.warn(`[dogs] "${id}" has no photograph.`);
 
+    const hasLat = raw.lat != null && raw.lat !== "", hasLng = raw.lng != null && raw.lng !== "";
     const lat = Number(raw.lat), lng = Number(raw.lng);
-    const hasCoords = raw.lat != null && raw.lng != null && raw.lat !== "" && raw.lng !== "" &&
+    const hasCoords = hasLat && hasLng &&
       Number.isFinite(lat) && Number.isFinite(lng) && Math.abs(lat) <= 90 && Math.abs(lng) <= 180;
-    if (!hasCoords) console.warn(`[dogs] "${id}" has no valid coordinates, so it will appear in the gallery only.`);
+    // Coordinates left blank on purpose are fine (gallery only); only complain about bad values.
+    if (!hasCoords && (hasLat || hasLng)) console.warn(`[dogs] "${id}" has invalid coordinates, so it will appear in the gallery only.`);
 
     const caption = String(raw.caption || "").trim();
-    const locationNote = String(raw.locationNote || "").trim();
     return {
-      id, name, neighbourhood, caption, locationNote,
+      id, title, name, neighbourhood, caption, locationNote,
       date: raw.date ? String(raw.date) : "",
       story: raw.story || "",
       photos,
       hasCoords,
       lat: hasCoords ? roundCoord(lat) : null,
       lng: hasCoords ? roundCoord(lng) : null,
-      search: [name, caption, neighbourhood, locationNote].join(" ").toLowerCase(),
+      search: [title, name, caption, neighbourhood, locationNote].join(" ").toLowerCase(),
     };
   }
 
@@ -145,22 +152,37 @@
     '<path d="M12 12.2c-3 0-5.8 2.7-5.8 5.2 0 1.8 1.4 2.6 3 2.6 1.1 0 1.7-.5 2.8-.5s1.7.5 2.8.5c1.6 0 3-.8 3-2.6 0-2.5-2.8-5.2-5.8-5.2z"/>' +
     "</svg>";
 
+  // The label shown above a title: the specific place named, otherwise the neighbourhood.
+  const placeLabel = (dog) => dog.locationNote || dog.neighbourhood;
+  // Heading text: the editorial title, or the dog's own name if no title is set.
+  const headingText = (dog) => dog.title || dog.name;
+  // A plain-language name for screen readers and map markers.
+  const accessibleName = (dog) => {
+    const head = headingText(dog) || "A dog";
+    const place = placeLabel(dog);
+    return place ? `${head}, ${place}` : head;
+  };
+
   function cardHTML(dog, context) {
     const main = dog.photos[0];
-    const title = dog.name
-      ? `<h3 class="dog-card__name" id="dog-title-${esc(dog.id)}">${esc(dog.name)}</h3>`
-      : `<h3 class="dog-card__name is-unknown" id="dog-title-${esc(dog.id)}">Name unknown</h3>`;
+    const heading = headingText(dog);
+    const title = heading
+      ? `<h3 class="dog-card__name" id="dog-title-${esc(dog.id)}">${esc(heading)}</h3>`
+      : "";
 
     const thumbs = dog.photos.length > 1
       ? `<div class="dog-card__thumbs" role="group" aria-label="More photographs">` +
         dog.photos.map((p, i) =>
           `<button type="button" class="dog-card__thumb" data-thumb="${i}" aria-pressed="${i === 0}" aria-label="Show photograph ${i + 1} of ${dog.photos.length}">` +
-          `<img src="${esc(p.src)}" alt="" loading="lazy" decoding="async"></button>`
+          `<img src="${esc(p.thumb)}" alt="" loading="lazy" decoding="async"></button>`
         ).join("") + `</div>`
       : "";
 
+    // Only show rows that have content. The neighbourhood row is skipped when it would just
+    // repeat the place label above the title.
     const rows = [];
-    if (dog.locationNote) rows.push(`<div><dt>Approximate location</dt><dd>${esc(dog.locationNote)}</dd></div>`);
+    if (dog.name && dog.title) rows.push(`<div><dt>Name</dt><dd>${esc(dog.name)}</dd></div>`);
+    if (dog.neighbourhood && dog.locationNote && dog.neighbourhood !== dog.locationNote) rows.push(`<div><dt>Neighbourhood</dt><dd>${esc(dog.neighbourhood)}</dd></div>`);
     if (dog.date) rows.push(`<div><dt>Photographed</dt><dd>${formatDate(dog.date)}</dd></div>`);
 
     const story = dog.story
@@ -172,11 +194,11 @@
       : "";
 
     return `
-      <article class="dog-card" aria-labelledby="dog-title-${esc(dog.id)}">
+      <article class="dog-card" ${heading ? `aria-labelledby="dog-title-${esc(dog.id)}"` : `aria-label="${esc(accessibleName(dog))}"`}>
         ${main ? `<figure class="dog-card__figure"><img class="dog-card__photo" src="${esc(main.src)}" alt="${esc(main.alt)}" decoding="async"></figure>` : ""}
         ${thumbs}
         <div class="dog-card__body">
-          ${dog.neighbourhood ? `<p class="dog-card__place">${esc(dog.neighbourhood)}</p>` : ""}
+          ${placeLabel(dog) ? `<p class="dog-card__place">${esc(placeLabel(dog))}</p>` : ""}
           ${title}
           ${dog.caption ? `<p class="dog-card__caption">${esc(dog.caption)}</p>` : ""}
           ${rows.length ? `<dl class="dog-card__meta">${rows.join("")}</dl>` : ""}
@@ -270,9 +292,7 @@
       if (!dog.hasCoords) return;
       let marker = markers.get(dog.id);
       if (!marker) {
-        const label = dog.name
-          ? `${dog.name}${dog.neighbourhood ? ", " + dog.neighbourhood : ""}`
-          : (dog.neighbourhood ? `A dog in ${dog.neighbourhood}` : "A dog");
+        const label = accessibleName(dog);
         marker = L.marker([dog.lat, dog.lng], {
           icon: pawIcon(false),
           title: label,
@@ -401,14 +421,13 @@
   function renderGallery(list) {
     els.gallery.innerHTML = list.map((dog) => {
       const photo = dog.photos[0];
-      const label = `${dog.name || "Name unknown"}${dog.neighbourhood ? ", " + dog.neighbourhood : ""}`;
       return `
         <li class="dog-tile">
-          <button type="button" class="dog-tile__btn" data-dog="${esc(dog.id)}" aria-label="Open details: ${esc(label)}">
-            ${photo ? `<img class="dog-tile__img" src="${esc(photo.src)}" alt="${esc(photo.alt)}" loading="lazy" decoding="async">` : ""}
+          <button type="button" class="dog-tile__btn" data-dog="${esc(dog.id)}" aria-label="Open details: ${esc(accessibleName(dog))}">
+            ${photo ? `<img class="dog-tile__img" src="${esc(photo.thumb)}" alt="${esc(photo.alt)}" loading="lazy" decoding="async">` : ""}
             <span class="dog-tile__cap">
-              ${dog.neighbourhood ? `<span class="dog-tile__place">${esc(dog.neighbourhood)}</span>` : ""}
-              ${dog.name ? `<span class="dog-tile__name">${esc(dog.name)}</span>` : ""}
+              ${placeLabel(dog) ? `<span class="dog-tile__place">${esc(placeLabel(dog))}</span>` : ""}
+              ${headingText(dog) ? `<span class="dog-tile__name">${esc(headingText(dog))}</span>` : ""}
               ${dog.caption ? `<span class="dog-tile__text">${esc(dog.caption)}</span>` : ""}
             </span>
           </button>
